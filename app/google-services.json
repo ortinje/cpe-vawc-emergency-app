@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "753275013092",
+    "project_id": "vawc-emergency-app-2d71a",
+    "storage_bucket": "vawc-emergency-app-2d71a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:753275013092:android:b543f3601564e3425769f1",
+        "android_client_info": {
+          "package_name": "com.bscpe.vawcemergencyapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPxnQzY30lk72gXvrpVz6V19Q-JkTrLD4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
