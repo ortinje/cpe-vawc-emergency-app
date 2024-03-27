@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">VAWC Emergency App</string>
+    <string-array name="sex">
+        <item>Female</item>
+        <item>Male</item>
+    </string-array>
+    <string-array name="civilStatus">
+        <item>Single</item>
+        <item>Married</item>
+        <item>Widowed</item>
+        <item>Legally Separated</item>
+    </string-array>
+    <string name="title_activity_bottom_nav">BottomNav</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="home">Home</string>
+    <string name="chat">Chat</string>
+    <string name="logout">Logout</string>
+    <string name="profile">Profile</string>
 </resources>

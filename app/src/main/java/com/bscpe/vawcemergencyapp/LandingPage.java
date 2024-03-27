@@ -36,12 +36,8 @@ public class LandingPage extends AppCompatActivity {
 
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("adminEmergencyNumber/adminOne/PhoneNumber");
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message");
 
-        myRef.setValue("Hello, World!");
-
-        //call barangay official emergency number saved in database
+        //call barangay official emergency number saved in firebase database
         emergencyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,7 +82,7 @@ public class LandingPage extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), LoginPage.class);
+                Intent intent = new Intent(getApplicationContext(), MainPage.class);
                 startActivity(intent);
                 finish();
             }
