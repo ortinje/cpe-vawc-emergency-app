@@ -56,5 +56,17 @@
         <item name="android:fontFamily">@font/mulish</item>
     </style>
 
+    <style name="Header_01" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/mulish_semibold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/grayish</item>
+    </style>
+
+    <style name="Body" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/mulish_light</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/gray_light</item>
+    </style>
+
     <style name="Theme.VAWCEmergencyApp" parent="Base.Theme.VAWCEmergencyApp" />
 </resources>
