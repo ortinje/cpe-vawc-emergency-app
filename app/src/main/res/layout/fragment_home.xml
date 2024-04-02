@@ -33,9 +33,9 @@
                 android:fontFamily="@font/mulish_semibold"/>
 
             <TextView
+                android:id="@+id/showFirstName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="First Name"
                 android:textColor="@color/gray_dark"
                 android:textSize="18sp"
                 android:fontFamily="@font/mulish_semibold"/>
