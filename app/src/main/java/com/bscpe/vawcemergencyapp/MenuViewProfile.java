@@ -1,64 +1,121 @@
 package com.bscpe.vawcemergencyapp;
 
+import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link MenuViewProfile#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+
 public class MenuViewProfile extends Fragment {
+    TextView showLastName, showFirstName, showBirthday, showSex, showCivilStatus, showContactNumber, showBloodType, showAge, showWeight, showHeight, showFoodAllergies, showMedicalHistory, showSurgeries, showEmergencyContactName01, showEmergencyContactNum01, showEmergencyContactName02, showEmergencyContactNumber02;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    FrameLayout spinner;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public MenuViewProfile() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment MenuViewProfile.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static MenuViewProfile newInstance(String param1, String param2) {
-        MenuViewProfile fragment = new MenuViewProfile();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
+    private DatabaseReference mDatabase;
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_menu_view_profile, container, false);
+        View view = inflater.inflate(R.layout.fragment_menu_view_profile, container, false);
+
+        showLastName = view.findViewById(R.id.showLastName);
+        showFirstName = view.findViewById(R.id.showFirstName);
+        showBirthday = view.findViewById(R.id.showBirthday);
+        showSex = view.findViewById(R.id.showSex);
+        showCivilStatus = view.findViewById(R.id.showCivilStatus);
+        showContactNumber = view.findViewById(R.id.showContactNumber);
+        showBloodType = view.findViewById(R.id.showBloodType);
+        showAge = view.findViewById(R.id.showAge);
+        showWeight = view.findViewById(R.id.showWeight);
+        showHeight = view.findViewById(R.id.showHeight);
+        showFoodAllergies = view.findViewById(R.id.showFoodAllergies);
+        showMedicalHistory = view.findViewById(R.id.showMedicalHistory);
+        showSurgeries = view.findViewById(R.id.showSurgeries);
+        showEmergencyContactName01 = view.findViewById(R.id.showEmergencyContactName01);
+        showEmergencyContactNum01 = view.findViewById(R.id.showEmergencyContactNum01);
+        showEmergencyContactName02 = view.findViewById(R.id.showEmergencyContactName02);
+        showEmergencyContactNumber02 = view.findViewById(R.id.showEmergencyContactNumber02);
+        spinner = view.findViewById(R.id.progress_loader02);
+        spinner.setVisibility(View.VISIBLE);
+
+        // Get the current user
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (currentUser != null) {
+            // Get the user's ID
+            String userId = currentUser.getUid();
+
+            // Get a reference to the "users" node in the database
+            mDatabase = FirebaseDatabase.getInstance().getReference().child("users").child(userId);
+            spinner.setVisibility(View.VISIBLE);
+            // Add a listener to retrieve the user's data
+            mDatabase.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    // Retrieve user data from the dataSnapshot
+                    String lastName = dataSnapshot.child("lastName").getValue(String.class);
+                    String firstName = dataSnapshot.child("firstName").getValue(String.class);
+                    String birthday = dataSnapshot.child("birthdate").getValue(String.class);
+                    String sex = dataSnapshot.child("sex").getValue(String.class);
+                    String civilStatus = dataSnapshot.child("civilStatus").getValue(String.class);
+                    String contactNumber = dataSnapshot.child("contactNum").getValue(String.class);
+                    String bloodType = dataSnapshot.child("HealthInfo").child("BloodType").getValue(String.class);
+                    String age = dataSnapshot.child("HealthInfo").child("Age").getValue(String.class);
+                    String weight = dataSnapshot.child("HealthInfo").child("Weight").getValue(String.class);
+                    String height = dataSnapshot.child("HealthInfo").child("Height").getValue(String.class);
+                    String foodAllergies = dataSnapshot.child("FoodAllergy").child("01").getValue(String.class);
+                    String medicalHistory = dataSnapshot.child("MedicalHistory").child("01").getValue(String.class);
+                    String surgeries = dataSnapshot.child("Surgeries").child("01").getValue(String.class);
+                    String emergencyContactName01 = dataSnapshot.child("EmergencyContact").child("EmergencyContact01").child("Name").getValue(String.class);
+                    String emergencyContactNum01 = dataSnapshot.child("EmergencyContact").child("EmergencyContact01").child("Number").getValue(String.class);
+                    String emergencyContactName02 = dataSnapshot.child("EmergencyContact").child("EmergencyContact02").child("Name").getValue(String.class);
+                    String emergencyContactNumber02 = dataSnapshot.child("EmergencyContact").child("EmergencyContact02").child("Number").getValue(String.class);
+
+                    spinner.setVisibility(View.GONE);
+                    // Set the retrieved data to the TextViews
+                    showLastName.setText(lastName);
+                    showFirstName.setText(firstName);
+                    showBirthday.setText(birthday);
+                    showSex.setText(sex);
+                    showCivilStatus.setText(civilStatus);
+                    showContactNumber.setText(contactNumber);
+                    showBloodType.setText(bloodType);
+                    showAge.setText(age);
+                    showWeight.setText(weight);
+                    showHeight.setText(height);
+                    showFoodAllergies.setText(foodAllergies);
+                    showMedicalHistory.setText(medicalHistory);
+                    showSurgeries.setText(surgeries);
+                    showEmergencyContactName01.setText(emergencyContactName01);
+                    showEmergencyContactNum01.setText(emergencyContactNum01);
+                    showEmergencyContactName02.setText(emergencyContactName02);
+                    showEmergencyContactNumber02.setText(emergencyContactNumber02);
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+
+            });
+        }
+
+        return view;
     }
 }

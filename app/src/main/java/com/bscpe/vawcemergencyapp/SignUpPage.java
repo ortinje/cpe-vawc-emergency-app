@@ -17,6 +17,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -36,6 +37,8 @@ public class SignUpPage extends AppCompatActivity {
     Spinner sexDropdown, civilStatusDropdown;
     EditText birthdayInput,emailInput, passwordInput, repeatPassInput, lastNameInput, firstNameInput,contactNumInput, addressInput;
     Button submitBtn;
+
+    ProgressBar spinner;
 
     FirebaseAuth mAuth;
     DatabaseReference mDatabase;
@@ -60,7 +63,8 @@ public class SignUpPage extends AppCompatActivity {
         lastNameInput = findViewById(R.id.regLastName);
         contactNumInput= findViewById(R.id.RegContactNum);
         addressInput = findViewById(R.id.RegAddress);
-
+        spinner = findViewById(R.id.progress_loader);
+        spinner.setVisibility(View.GONE);
         //SEX DROPDOWN
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.sex, R.layout.spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -142,10 +146,13 @@ public class SignUpPage extends AppCompatActivity {
                     Toast.makeText(SignUpPage.this, "Please input birthday", Toast.LENGTH_SHORT).show();
                 }
 
+                spinner.setVisibility(View.VISIBLE);
+
                 mAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
+                                spinner.setVisibility(View.GONE);
                                 if (task.isSuccessful()) {
                                     mAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
