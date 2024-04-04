@@ -55,6 +55,7 @@ public class MenuViewProfile extends Fragment {
         spinner = view.findViewById(R.id.progress_loader02);
         spinner.setVisibility(View.VISIBLE);
 
+
         // Get the current user
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         if (currentUser != null) {

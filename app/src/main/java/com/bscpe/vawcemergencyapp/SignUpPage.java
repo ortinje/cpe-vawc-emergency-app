@@ -49,7 +49,7 @@ public class SignUpPage extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up_page);
 
         // Initialize Firebase Authentication
-                mAuth = FirebaseAuth.getInstance();
+         mAuth = FirebaseAuth.getInstance();
         // Initialize Firebase Database
         mDatabase = FirebaseDatabase.getInstance().getReference();
         sexDropdown = findViewById(R.id.sexSpinner);
