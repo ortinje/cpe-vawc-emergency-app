@@ -28,8 +28,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
+
 
 public class MenuUserInfo extends Fragment {
 
@@ -119,6 +123,7 @@ public class MenuUserInfo extends Fragment {
                     String userContactNumber = dataSnapshot.child("contactNum").getValue(String.class);
                     String userAddress = dataSnapshot.child("address").getValue(String.class);
 
+
                     spinner.setVisibility(View.GONE);
                     // Set the retrieved data to the EditText and Spinners
                     lastName.setText(userLastName);
@@ -167,6 +172,18 @@ public class MenuUserInfo extends Fragment {
             userRef.child("sex").setValue(sex.getSelectedItem().toString());
             userRef.child("civilStatus").setValue(civilStatus.getSelectedItem().toString());
             userRef.child("contactNum").setValue(contactNumber.getText().toString());
+            String birthdateString = birthday.getText().toString();
+            SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy", Locale.US);
+            try {
+                Date birthdate = sdf.parse(birthdateString);
+                long ageInMillis = new Date().getTime() - birthdate.getTime();
+                long age = ageInMillis / (1000L * 60 * 60 * 24 * 365); // Calculate age in years
+
+                // Save the calculated age to the database
+                userRef.child("HealthInfo").child("Age").setValue(String.valueOf(age));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
             userRef.child("address").setValue(address.getText().toString())
                     .addOnSuccessListener(aVoid -> {
                         // Display a toast message indicating a successful update

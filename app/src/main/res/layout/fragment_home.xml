@@ -28,17 +28,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Hello, "
-                android:textColor="@color/gray_dark"
-                android:textSize="18sp"
-                android:fontFamily="@font/mulish_semibold"/>
+                style="@style/Header_01"/>
 
             <TextView
                 android:id="@+id/showFirstName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/gray_dark"
-                android:textSize="18sp"
-                android:fontFamily="@font/mulish_semibold"/>
+                style="@style/Header_01"/>
 
         </LinearLayout>
 
@@ -129,7 +125,7 @@
                     android:fontFamily="@font/mulish"
                     android:text="We would love to talk to you"
                     android:textAlignment="center"
-                    android:textColor="@color/gray_light"
+                    android:textColor="@color/gray"
                     android:textSize="14sp" />
 
             </LinearLayout>

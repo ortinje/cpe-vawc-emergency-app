@@ -5,118 +5,123 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:background="#F5F6F8"
+    android:paddingTop="0dp"
+    android:paddingLeft="25dp"
+    android:paddingRight="25dp"
+    android:background="#FAFAFA"
     android:orientation="vertical"
-    android:paddingStart="45dp"
-    android:paddingTop="15dp"
-    android:paddingEnd="45dp"
     tools:context=".LandingPage">
 
-    <TextView
-        android:id="@+id/emergencyNeedText"
-        android:layout_width="300dp"
-        android:layout_marginTop="20dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:fontFamily="@font/mulish_semibold"
-        android:text="Hello again!"
-        android:textAlignment="center"
-        android:textColor="#404449"
-        android:textSize="32sp" />
-
-    <TextView
-        android:id="@+id/landingPage_caption"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="5dp"
-        android:text="Welcome back, you’ve been missed!"
-        android:fontFamily="@font/mulish"
-        android:textAlignment="center"
-        android:textColor="#747474"
-        android:textSize="17sp" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_gravity="center"
-        app:srcCompat="@drawable/women_child_vector" />
-
-    <EditText
-        android:id="@+id/loginEmail"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/rounded_edittext_background"
-        android:ems="10"
-        android:fontFamily="@font/mulish"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:textSize="15sp" />
-
-    <EditText
-        android:layout_marginTop="10dp"
-        android:id="@+id/loginPassword"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:ems="10"
-        android:fontFamily="@font/mulish"
-        android:textSize="15sp"
-        android:hint="Password"
-        android:background="@drawable/rounded_edittext_background"
-        android:inputType="textPassword" />
-
-    <TextView
-        android:id="@+id/ForgotPassword"
-        android:layout_height="wrap_content"
-        android:layout_width="297dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/mulish_semibold"
-        android:text="Forgot Password"
-        android:textAlignment="textEnd"
-        android:textColor="#47C683" />
-
-    <Button
-        android:id="@+id/LoginButton"
-        android:layout_gravity="center"
-        android:layout_width="297dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="40dp"
-        android:backgroundTint="#E86C6B"
-        android:fontFamily="@font/mulish_semibold"
-        android:text="Login"
-        android:textColor="#F4F5F5"
-        android:textSize="15sp"
-        app:cornerRadius="10dp" />
     <LinearLayout
-        android:layout_width="290dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center"
-        android:layout_marginTop="5dp">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/emergencyNeedText"
+            android:layout_width="300dp"
+            android:layout_marginTop="20dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:fontFamily="@font/mulish_semibold"
+            android:text="Hello again!"
+            android:textAlignment="center"
+            android:textColor="#404449"
+            android:textSize="38sp" />
+
+        <TextView
+            android:id="@+id/landingPage_caption"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:text="Welcome back, you’ve been missed!"
+            android:fontFamily="@font/mulish"
+            android:textAlignment="center"
             android:textColor="#747474"
-            android:text="Not a member?" />
+            android:textSize="17sp" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="50dp"
+            android:layout_width="265dp"
+            android:layout_height="265dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/women_child_vector" />
+
+        <EditText
+            android:id="@+id/loginEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:fontFamily="@font/mulish"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            style="@style/CustomEditTextStyle" />
+
+        <EditText
+            android:id="@+id/loginPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="Password"
+            style="@style/CustomEditTextStyle" />
 
         <TextView
-            android:id="@+id/registerNow"
-            android:layout_width="wrap_content"
+            android:id="@+id/ForgotPassword"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/mulish_bold"
-            android:text="Register now"
+            android:text="Forgot Password"
             android:textAlignment="textEnd"
+            android:textSize="16sp"
             android:textColor="#47C683" />
+
+        <Button
+            android:id="@+id/LoginButton"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="#E86C6B"
+            android:fontFamily="@font/mulish_semibold"
+            android:text="Login"
+            android:textColor="#F4F5F5"
+            android:textSize="18sp"
+            app:cornerRadius="6dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/grayish"
+                android:fontFamily="@font/mulish_semibold"
+                android:textSize="16sp"
+                android:text="Not a member?" />
+
+            <TextView
+                android:id="@+id/registerNow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/mulish_bold"
+                android:text="Register now"
+                android:textAlignment="textEnd"
+                android:textColor="#47C683"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
     </LinearLayout>
 
 </LinearLayout>

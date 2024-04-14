@@ -18,9 +18,9 @@
         <item name="android:layout_gravity">center</item>
         <item name="android:layout_marginTop">3dp</item>
         <item name="android:layout_marginBottom">10dp</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/grayish</item>
-        <item name="android:fontFamily">@font/mulish</item>
+        <item name="android:fontFamily">@font/mulish_medium</item>
     </style>
 
     <style name="CustomInputLabel" parent="Widget.AppCompat.TextView">
@@ -65,8 +65,9 @@
     <style name="Body" parent="TextAppearance.AppCompat">
         <item name="android:fontFamily">@font/mulish_light</item>
         <item name="android:textSize">14sp</item>
-        <item name="android:textColor">@color/gray_light</item>
+        <item name="android:textColor">@color/gray</item>
     </style>
+
 
     <style name="Theme.VAWCEmergencyApp" parent="Base.Theme.VAWCEmergencyApp" />
 </resources>

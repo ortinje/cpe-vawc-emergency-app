@@ -24,7 +24,7 @@ import com.google.firebase.database.ValueEventListener;
 
 
 public class MenuViewProfile extends Fragment {
-    TextView showLastName, showFirstName, showBirthday, showSex, showCivilStatus, showContactNumber, showBloodType, showAge, showWeight, showHeight, showFoodAllergies, showMedicalHistory, showSurgeries, showEmergencyContactName01, showEmergencyContactNum01, showEmergencyContactName02, showEmergencyContactNumber02;
+    TextView showLastName, showFirstName, showBirthday, showSex, showCivilStatus, showContactNumber, showAddress, showEmail, showBloodType, showAge, showWeight, showHeight, showFoodAllergies, showMedicalHistory, showSurgeries, showEmergencyContactName01, showEmergencyContactNum01, showEmergencyContactName02, showEmergencyContactNum02;
 
     FrameLayout spinner;
 
@@ -43,6 +43,8 @@ public class MenuViewProfile extends Fragment {
         showContactNumber = view.findViewById(R.id.showContactNumber);
         showBloodType = view.findViewById(R.id.showBloodType);
         showAge = view.findViewById(R.id.showAge);
+        showEmail = view.findViewById(R.id.showEmail);
+        showAddress = view.findViewById(R.id.showAddress);
         showWeight = view.findViewById(R.id.showWeight);
         showHeight = view.findViewById(R.id.showHeight);
         showFoodAllergies = view.findViewById(R.id.showFoodAllergies);
@@ -51,7 +53,7 @@ public class MenuViewProfile extends Fragment {
         showEmergencyContactName01 = view.findViewById(R.id.showEmergencyContactName01);
         showEmergencyContactNum01 = view.findViewById(R.id.showEmergencyContactNum01);
         showEmergencyContactName02 = view.findViewById(R.id.showEmergencyContactName02);
-        showEmergencyContactNumber02 = view.findViewById(R.id.showEmergencyContactNumber02);
+        showEmergencyContactNum02 = view.findViewById(R.id.showEmergencyContactNumber02);
         spinner = view.findViewById(R.id.progress_loader02);
         spinner.setVisibility(View.VISIBLE);
 
@@ -75,6 +77,8 @@ public class MenuViewProfile extends Fragment {
                     String birthday = dataSnapshot.child("birthdate").getValue(String.class);
                     String sex = dataSnapshot.child("sex").getValue(String.class);
                     String civilStatus = dataSnapshot.child("civilStatus").getValue(String.class);
+                    String address = dataSnapshot.child("address").getValue(String.class);
+                    String email = dataSnapshot.child("email").getValue(String.class);
                     String contactNumber = dataSnapshot.child("contactNum").getValue(String.class);
                     String bloodType = dataSnapshot.child("HealthInfo").child("BloodType").getValue(String.class);
                     String age = dataSnapshot.child("HealthInfo").child("Age").getValue(String.class);
@@ -86,7 +90,8 @@ public class MenuViewProfile extends Fragment {
                     String emergencyContactName01 = dataSnapshot.child("EmergencyContact").child("EmergencyContact01").child("Name").getValue(String.class);
                     String emergencyContactNum01 = dataSnapshot.child("EmergencyContact").child("EmergencyContact01").child("Number").getValue(String.class);
                     String emergencyContactName02 = dataSnapshot.child("EmergencyContact").child("EmergencyContact02").child("Name").getValue(String.class);
-                    String emergencyContactNumber02 = dataSnapshot.child("EmergencyContact").child("EmergencyContact02").child("Number").getValue(String.class);
+                    String emergencyContactNum02 = dataSnapshot.child("EmergencyContact").child("EmergencyContact02").child("Number").getValue(String.class);
+
 
                     spinner.setVisibility(View.GONE);
                     // Set the retrieved data to the TextViews
@@ -97,6 +102,8 @@ public class MenuViewProfile extends Fragment {
                     showCivilStatus.setText(civilStatus);
                     showContactNumber.setText(contactNumber);
                     showBloodType.setText(bloodType);
+                    showEmail.setText(email);
+                    showAddress.setText(address);
                     showAge.setText(age);
                     showWeight.setText(weight);
                     showHeight.setText(height);
@@ -106,7 +113,7 @@ public class MenuViewProfile extends Fragment {
                     showEmergencyContactName01.setText(emergencyContactName01);
                     showEmergencyContactNum01.setText(emergencyContactNum01);
                     showEmergencyContactName02.setText(emergencyContactName02);
-                    showEmergencyContactNumber02.setText(emergencyContactNumber02);
+                    showEmergencyContactNum02.setText(emergencyContactNum02);
                 }
 
                 @Override

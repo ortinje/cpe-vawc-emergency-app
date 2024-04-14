@@ -30,7 +30,7 @@ public class Loader extends AppCompatActivity {
                     startActivity(new Intent(Loader.this, MainPage.class));
                 } else {
                     // User is not signed in, proceed to LoginPage
-                    startActivity(new Intent(Loader.this, LoginPage.class));
+                    startActivity(new Intent(Loader.this, LandingPage.class));
                 }
                 finish(); // Finish the current activity to prevent the user from coming back to it on back press
             }

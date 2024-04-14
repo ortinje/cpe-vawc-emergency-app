@@ -89,7 +89,7 @@
                 android:id="@+id/updateLastName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Last Name"
+                android:hint="First Name"
                 style="@style/CustomEditTextStyle" />
 
             <!--First Name-->

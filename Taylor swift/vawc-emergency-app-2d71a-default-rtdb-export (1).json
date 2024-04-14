@@ -1,0 +1,49 @@
+{
+  "accessAdmin": {
+    "01": "3ZG3QJvYf2Xno4L4oqWYN0R3XOO2",
+    "02": "vP8bkhiRwuX6au94CVhJXnC6FYH2"
+  },
+  "adminEmergencyNumber": {
+    "adminOne": {
+      "Name": "Captain",
+      "PhoneNumber": "12345"
+    }
+  },
+  "users": {
+    "vP8bkhiRwuX6au94CVhJXnC6FYH2": {
+      "EmergencyContact": {
+        "EmergencyContact01": {
+          "Name": "",
+          "Number": ""
+        },
+        "EmergencyContact02": {
+          "Name": "Joshua Dela Cruz",
+          "Number": "911614131"
+        }
+      },
+      "FoodAllergy": {
+        "01": "Peanuts, Dairy, Egg, Soy"
+      },
+      "HealthInfo": {
+        "Age": "25",
+        "BloodType": "O+",
+        "Height": "185 cm",
+        "Weight": "56 kg"
+      },
+      "MedicalHistory": {
+        "01": "Diabetes, Hypertension"
+      },
+      "Surgeries": {
+        "01": "Hip"
+      },
+      "address": "Purok 6 Lot 3",
+      "birthdate": "02/15/1999",
+      "civilStatus": "Single",
+      "contactNum": "09123456789",
+      "email": "ortiz@gmail.com",
+      "firstName": "Trisha",
+      "lastName": "Rejes",
+      "sex": "Male"
+    }
+  }
+}

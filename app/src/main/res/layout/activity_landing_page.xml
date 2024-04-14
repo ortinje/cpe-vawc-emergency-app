@@ -5,82 +5,91 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:background="#F5F6F8"
+    android:paddingTop="0dp"
+    android:paddingLeft="25dp"
+    android:paddingRight="25dp"
+    android:background="#FAFAFA"
     android:orientation="vertical"
-    android:paddingStart="45dp"
-    android:paddingTop="10dp"
-    android:paddingEnd="45dp"
     tools:context=".LandingPage">
 
-    <TextView
-        android:id="@+id/emergencyNeedText"
-        android:layout_width="300dp"
-        android:layout_marginTop="30dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:fontFamily="@font/mulish_semibold"
-        android:text="Emergency Help Needed?"
-        android:textAlignment="center"
-        android:textColor="#404449"
-        android:textSize="32sp" />
-
-    <TextView
-        android:id="@+id/landingPage_caption"
-        android:layout_width="257dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/mulish"
-        android:text="Press the button below and help will reach you shortly."
-        android:textAlignment="center"
-        android:textColor="#747474"
-        android:textSize="17sp" />
-
-    <ImageView
-        android:id="@+id/emergencyButton"
-        android:layout_width="match_parent"
-        android:layout_height="260dp"
-        android:layout_marginTop="40dp"
-        android:clickable="true"
-        app:srcCompat="@drawable/emergency_btn" />
-
-    <Button
-        android:id="@+id/loginButton"
-        android:layout_gravity="center"
-        android:layout_width="297dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="95dp"
-        android:backgroundTint="#E86C6B"
-        android:fontFamily="@font/mulish_semibold"
-        android:text="Login"
-        android:textColor="#F4F5F5"
-        android:textSize="15sp"
-        app:cornerRadius="6dp" />
-
     <LinearLayout
-        android:layout_width="290dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:layout_gravity="center"
-        android:layout_marginTop="5dp">
+        android:orientation="vertical"
+        android:gravity="center_vertical">
 
         <TextView
-            android:id="@+id/notmember_text"
-            android:layout_width="wrap_content"
+            android:id="@+id/emergencyNeedText"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:fontFamily="@font/mulish_semibold"
+            android:text="Emergency Help Needed?"
+            android:textAlignment="center"
+            android:textColor="#404449"
+            android:textSize="38sp" />
+
+        <TextView
+            android:id="@+id/landingPage_caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/mulish_medium"
+            android:text="Press the button below and help will reach you shortly."
+            android:textAlignment="center"
             android:textColor="#747474"
-            android:text="Not a member?" />
+            android:textSize="17sp" />
 
-        <TextView
-            android:id="@+id/registerNow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+        <ImageView
+            android:id="@+id/emergencyButton"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="70dp"
+            android:clickable="true"
+            app:srcCompat="@drawable/emergency_btn" />
+
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginTop="95dp"
+            android:backgroundTint="#E86C6B"
             android:fontFamily="@font/mulish_bold"
-            android:text="Register now"
-            android:textAlignment="textEnd"
-            android:textColor="#47C683" />
+            android:text="Login"
+            android:textColor="#F4F5F5"
+            android:textSize="18sp"
+            app:cornerRadius="6dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/notmember_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/grayish"
+                android:fontFamily="@font/mulish_semibold"
+                android:textSize="16sp"
+                android:text="Not a member?" />
+
+            <TextView
+                android:id="@+id/registerNow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/mulish_bold"
+                android:text="Register now"
+                android:textAlignment="textEnd"
+                android:textColor="#47C683"
+                android:textSize="16sp"
+                />
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>
