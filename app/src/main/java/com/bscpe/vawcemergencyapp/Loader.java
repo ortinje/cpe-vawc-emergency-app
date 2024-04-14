@@ -34,6 +34,6 @@ public class Loader extends AppCompatActivity {
                 }
                 finish(); // Finish the current activity to prevent the user from coming back to it on back press
             }
-        }, 2000); // 5-second delay in milliseconds (5000 ms)
+        }, 5000); // 5-second delay in milliseconds (5000 ms)
     }
 }

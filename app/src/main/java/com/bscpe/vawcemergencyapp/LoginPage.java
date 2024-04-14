@@ -78,8 +78,7 @@ public class LoginPage extends AppCompatActivity {
                                     FirebaseUser user = mAuth.getCurrentUser();
                                     if (user.isEmailVerified()) {
                                         // Check if the user is an admin
-                                        Intent intent = new Intent(LoginPage.this, MainPage.class);
-                                        startActivity(intent);
+                                        checkAdmin(user.getUid());
                                     } else {
                                         // Email is not verified, show a toast
                                         Toast.makeText(LoginPage.this, "Email is not verified. Please verify your email.", Toast.LENGTH_SHORT).show();
@@ -106,12 +105,11 @@ public class LoginPage extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
                     // User is an admin, proceed to AdminPage
-                    Intent intent = new Intent(LoginPage.this, MainActivity.class);
+                    Intent intent = new Intent(LoginPage.this, MainPage.class);
                     startActivity(intent);
                 } else {
                     // User is not an admin, proceed to MainPage
-                    Intent intent = new Intent(LoginPage.this, MainPage.class);
-                    startActivity(intent);
+                    Toast.makeText(LoginPage.this, "Authentication failed. Please add user admin.", Toast.LENGTH_SHORT).show();
                 }
             }
 

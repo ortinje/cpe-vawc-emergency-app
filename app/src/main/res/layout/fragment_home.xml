@@ -49,45 +49,11 @@
         <ImageView
             android:id="@+id/mainEmergencyButton"
             android:layout_width="match_parent"
-            android:layout_height="230dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="30dp"
             android:clickable="true"
-            android:src="@drawable/emergency_btn" />
-
-        <TextView
-            android:id="@+id/emergencyNeedText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="@font/mulish_semibold"
-            android:text="Emergency Help Needed?"
-            android:textAlignment="center"
-            android:textColor="#404449"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/landingPage_caption"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="5dp"
-            android:fontFamily="@font/mulish"
-            android:text="Press the button above and help will reach you shortly."
-            android:textAlignment="center"
-            android:textColor="@color/gray"
-            android:textSize="15sp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:fontFamily="@font/mulish_semibold"
-            android:text="Not sure what to do?"
-            android:textAlignment="center"
-            android:textColor="@color/gray"
-            android:textSize="16sp" />
+            android:src="@drawable/admin" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -156,7 +122,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Hospitals"
+                    android:text="User Profiles"
                     android:layout_marginTop="10dp"
                     style="@style/Header_01"/>
 
@@ -164,7 +130,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     style="@style/Body"
-                    android:text="Lists of all hospitals near me"/>
+                    android:text="View and update user profiles"/>
             </LinearLayout>
 
             <Space
@@ -197,7 +163,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     style="@style/Body"
-                    android:text="Where to seek help near me"/>
+                    android:text="Update Emergency Hotlines"/>
 
             </LinearLayout>
         </LinearLayout>
@@ -226,7 +192,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="First aid"
+                    android:text="FAQ"
                     android:layout_marginTop="10dp"
                     style="@style/Header_01"/>
 
@@ -234,7 +200,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     style="@style/Body"
-                    android:text="First aid while waiting for help "/>
+                    android:text="Frequently Asked Question"/>
             </LinearLayout>
 
             <Space
@@ -252,14 +218,14 @@
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/icon_law"
+                    android:src="@drawable/minicon_userguide"
                     android:contentDescription="TODO">
                 </ImageView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="RA 9262"
+                    android:text="User Guide"
                     android:layout_marginTop="10dp"
                     style="@style/Header_01"/>
 
@@ -267,7 +233,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     style="@style/Body"
-                    android:text="Know and assert your rights"/>
+                    android:text="User guide and manual"/>
             </LinearLayout>
         </LinearLayout>
 

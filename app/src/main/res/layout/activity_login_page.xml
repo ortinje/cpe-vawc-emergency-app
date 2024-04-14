@@ -70,23 +70,12 @@
             android:hint="Password"
             style="@style/CustomEditTextStyle" />
 
-        <TextView
-            android:id="@+id/ForgotPassword"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/mulish_bold"
-            android:text="Forgot Password"
-            android:textAlignment="textEnd"
-            android:textSize="16sp"
-            android:textColor="#47C683" />
-
         <Button
             android:id="@+id/LoginButton"
             android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="65dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="30dp"
             android:backgroundTint="#E86C6B"
             android:fontFamily="@font/mulish_semibold"
             android:text="Login"
@@ -99,28 +88,18 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="@color/grayish"
-                android:fontFamily="@font/mulish_semibold"
-                android:textSize="16sp"
-                android:text="Not a member?" />
-
-            <TextView
-                android:id="@+id/registerNow"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/mulish_bold"
-                android:text="Register now"
-                android:textAlignment="textEnd"
-                android:textColor="#47C683"
-                android:textSize="16sp"/>
-        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/mulish"
+            android:text="Not yet registered? Contact the cloud admin to have you added as an admin to the system."
+            android:textAlignment="center"
+            android:textColor="@color/gray"
+            android:textSize="15sp" />
 
     </LinearLayout>
 
